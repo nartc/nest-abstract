@@ -1,9 +1,9 @@
 export enum ObjectMapping {
-    Mongoose = 'mongoose',
-    TypeOrm = 'typeorm'
+  Mongoose = 'mongoose',
+  TypeOrm = 'typeorm',
 }
 
 export interface AbstractModuleOptions {
-    objectMappingType: ObjectMapping;
-    withSwagger?: boolean;
+  objectMappingType: ObjectMapping;
+  withSwagger?: boolean;
 }
