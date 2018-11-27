@@ -1,0 +1,59 @@
+{
+  "name": "nest-abstract",
+  "version": "1.0.0",
+  "description": "NestJS Abstraction Helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "coveralls": "yarn run coverage --coverageReporters=text-lcov | coveralls",
+    "test:watch": "jest --watch",
+    "build": "rm -rf ./dist && tsc && npm run build:index",
+    "build:index": "rm -rf ./index.js ./index.d.ts && tsc -d --skipLibCheck ./index.ts",
+    "format": "prettier **/**/*.ts --ignore-path ./.prettierignore --write && git status",
+    "prepublish": "npm run format && npm run build"
+  },
+  "keywords": [
+    "nestjs",
+    "abstraction",
+    "base"
+  ],
+  "author": {
+    "name": "Chau Tran",
+    "email": "ctran2428@gmail.com",
+    "url": "https://github.com/nartc"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@nestjs/common": "^5.4.0"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^5.4.0",
+    "@nestjs/passport": "^5.1.0",
+    "@nestjs/typeorm": "^5.2.2",
+    "@types/mongoose": "^5.3.1",
+    "@types/node": "^10.12.10",
+    "mongoose": "^5.3.13",
+    "passport": "^0.4.0",
+    "prettier": "^1.15.2",
+    "typeorm": "^0.2.9",
+    "typescript": "^3.1.6"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "./coverage"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.3.3"
+  }
+}
