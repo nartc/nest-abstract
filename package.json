@@ -1,8 +1,8 @@
 {
   "name": "nest-abstract",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "NestJS Abstraction Helper",
-  "repository": "https://github.com/nartc/nest-abstract",
+  "repository": "git@github.com:nartc/nestjs-abstract.git",
   "main": "index.js",
   "scripts": {
     "test": "jest",
