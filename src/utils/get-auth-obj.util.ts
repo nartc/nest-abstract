@@ -1,4 +1,4 @@
-import { DefaultAuthObject } from 'src/interfaces';
+import { DefaultAuthObject } from 'src/interfaces/default-auth-object.interface';
 
 export const defaultAuthObj: DefaultAuthObject = {
   find: true,
