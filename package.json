@@ -1,6 +1,6 @@
 {
   "name": "nest-abstract",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "description": "NestJS Abstraction Helper",
   "repository": "git@github.com:nartc/nest-abstract.git",
   "main": "index.js",
