@@ -24,7 +24,7 @@
     "@nestjs/mongoose": "^5.2.2",
     "@nestjs/passport": "^5.1.0",
     "mongoose": "^5.3.13",
-    "nest-abstract": "^1.0.0-alpha.6",
+    "nest-abstract": "^1.0.0-alpha.7",
     "passport": "^0.4.0",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
