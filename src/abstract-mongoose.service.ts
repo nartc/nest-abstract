@@ -12,6 +12,13 @@ export class AbstractMongooseService<
   T extends AbstractModel
 > extends AbstractCoreService<T> {
   protected _model: Model<T>;
+  protected static model: any;
+
+  constructor(model: Model<T>) {
+    super();
+    this._model = model;
+    AbstractMongooseService.model = model;
+  }
 
   public async find(filter: any = {}): Promise<T[]> {
     return this._model.find(filter).exec();

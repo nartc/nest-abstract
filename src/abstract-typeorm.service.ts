@@ -14,6 +14,11 @@ export class AbstractTypeOrmService<
 > extends AbstractCoreService<T> {
   protected _model: Repository<T>;
 
+  constructor(model: Repository<T>) {
+    super();
+    this._model = model;
+  }
+
   public async find(
     filter: FindManyOptions<T> & FindConditions<T> = {},
   ): Promise<T[]> {
