@@ -2,9 +2,7 @@
 
 <p align="center">Abstraction component for NestJs.</p>
 
-Fair warning: Please do not use this package as of the moment. Published version is to test the actual `npm publish` command. 
-
-Thank you! Stay tune!
+Fair warning: This package is still in early development stage. Please give me any feedbacks if you decide to try it out and find any problems/area-for-improvements. Thank you!
 
 ## Features
 - Provides **Abstractions** for your `NestJS` **RESTfulAPI**.
