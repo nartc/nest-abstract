@@ -63,4 +63,47 @@ I am a big fan of `TypeScript` and **abstraction** overall. One of the biggest m
 
    > Use your `schema` to initialize your `Model` with `@nestjs/mongoose`.
 
-3. Create your `Service` with `AbstractCoreService`.
+3. Create your `Service` with `AbstractMongooseService`.
+   ```typescript
+   import { Injectable } from '@nestjs/common';
+   import { InjectModel } from '@nestjs/mongoose';
+   import { AbstractMongooseService } from 'nest-abstract';
+   import { Model } from 'mongoose';
+
+   @Injectable()
+   export class TodoService extends AbstractMongooseService<Todo> {
+       constructor(@InjectModel('todo') private readonly _todoModel: Model<Todo>) {
+           super(_todoModel);
+       }
+   }
+   ```
+   > Use `@InjectModel()` from `@nestjs/mongoose` to inject your **MongooseModel** and pass that to the *abstract* constructor.
+
+4. Create your `Controller` with `abstractControllerFactory`
+    ```typescript
+    import { Controller } from '@nestjs/common';
+    import { abstractControllerFactory } from 'nest-abstract';
+    import { Todo } from './todo.model';
+    import { TodoService } from './todo.service';
+
+    const BaseController = abstractControllerFactory<Todo>({
+        model: TodoService.model,
+        auth: {
+            find: false,
+        },
+    });
+
+    @Controller('todo')
+    export class TodoController extends BaseController {
+        constructor(private readonly _todoService: TodoService) {
+            super(_todoService);
+        }
+    }
+    ```
+
+5. Make sure you put your `Service` in `providers` array in `Module` and your `Controller` in `controllers` array in `Module`.
+   
+   > Now your `TodoController` should have 5 pre-defined route handlers: `find`, `findById`, `create`, `update` and `delete`
+
+## Credit
+- @rcanessa89 and his/her repository: https://github.com/rcanessa89/nest-js-starter. rcanessa89 first raised an issue regarding a `BaseController` on my `nest-mean` repository and came up with his/her `BaseController`.
