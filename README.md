@@ -15,6 +15,9 @@ Thank you! Stay tune!
 
 I am a big fan of `TypeScript` and **abstraction** overall. One of the biggest motivations is to create a `BaseController` to work with `Swagger`'s decorators that `@nestjs/swagger` provides which is on the todo list. Main reason is I want to roll out a version of the package that will make it work with `non-swagger` applications first as this is my first attempt at an `npm` package.
 
+## Installation
+`npm i nest-abstract`
+
 ## Usage
 
 1. Import `AbstractModule` in your `AppModule`
