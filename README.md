@@ -106,5 +106,11 @@ I am a big fan of `TypeScript` and **abstraction** overall. One of the biggest m
    
    > Now your `TodoController` should have 5 pre-defined route handlers: `find`, `findById`, `create`, `update` and `delete`
 
+## Plans
+
+- Might break `abstractControllerFactory` out to 3 separate factories: normal, swagger and withAuth
+- Supports `Serialization` (https://docs.nestjs.com/techniques/serialization)?
+- anything? 
+
 ## Credit
 - @rcanessa89 and his/her repository: https://github.com/rcanessa89/nest-js-starter. rcanessa89 first raised an issue regarding a `BaseController` on my `nest-mean` repository and came up with his/her `BaseController`.
