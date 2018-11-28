@@ -12,7 +12,7 @@ export class AbstractMongooseService<
   T extends AbstractModel
 > extends AbstractCoreService<T> {
   protected _model: Model<T>;
-  protected static model: any;
+  static model: any;
 
   constructor(model: Model<T>) {
     super();

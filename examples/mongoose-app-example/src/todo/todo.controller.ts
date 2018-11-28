@@ -4,7 +4,7 @@ import { Todo } from './todo.model';
 import { TodoService } from './todo.service';
 
 const BaseController = abstractControllerFactory<Todo>({
-  model: TodoService.todoModel,
+  model: TodoService.model,
   auth: {
     find: false,
   },
