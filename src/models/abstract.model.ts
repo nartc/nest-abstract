@@ -1,29 +1,29 @@
-import {Document} from 'mongoose';
+import { Document } from 'mongoose';
 import {
-    Entity,
-    PrimaryGeneratedColumn,
-    CreateDateColumn,
-    UpdateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 export interface AbstractModel extends Document {
-    createdAt?: Date;
-    updatedAt?: Date;
-    id?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  id?: string;
 }
 
 @Entity()
 export class AbstractEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @CreateDateColumn()
-    createdAt?: string;
+  @CreateDateColumn()
+  createdAt?: string;
 
-    @UpdateDateColumn()
-    updatedAt?: string;
+  @UpdateDateColumn()
+  updatedAt?: string;
 
-    static get modelName(): string {
-        return this.name;
-    }
+  static get modelName(): string {
+    return this.name;
+  }
 }
