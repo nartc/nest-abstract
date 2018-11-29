@@ -105,10 +105,19 @@ I am a big fan of `TypeScript` and **abstraction** overall. One of the biggest m
 
 To enable `Authenticate` on your `Controllers` with `Passport`, `abstractControllerWithAuth`.
    > You need to install `passport` and `@nestjs/passport` if you want to enable `Authentication`.
+   ```typescript
+   import { abstractControllerWithAuth } from 'nest-abstract';
+
+   const BaseController = abstractControllerWithAuth<Todo>({model: TodoService.model});
+   ```
+   
+   > By default, `auth` is enabled by on all 5 CRUDs operations.
   
 ## With Swagger
 
-To be updated!
+To enable `Swagger` on your `Controller`, use `abstractControllerWithSwagger`.
+   > `Authentication` is "mandatory" with `Swagger` so you will have to have: `passport`, `@nestjs/passport` and `@nestjs/swagger` installed.
+   > By default, `auth` is enabled by on all 5 CRUDs operations. If you wish to use `abstractControllerWithSwagger` without `auth`, please pass in an object of type `DefaultAuthObj` and set all the properties to `false`.
 
 ## Plans
 

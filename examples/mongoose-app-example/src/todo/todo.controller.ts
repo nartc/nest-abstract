@@ -1,16 +1,11 @@
-import { Controller } from '@nestjs/common';
-import { abstractControllerFactory } from 'nest-abstract';
-import { Todo } from './todo.model';
-import { TodoService } from './todo.service';
+import { Controller } from "@nestjs/common";
+import { abstractControllerFactory } from "nest-abstract";
+import { Todo } from "./todo.model";
+import { TodoService } from "./todo.service";
 
-const BaseController = abstractControllerFactory<Todo>({
-  model: TodoService.model,
-  auth: {
-    find: false,
-  },
-});
+const BaseController = abstractControllerFactory<Todo>({ model: TodoService.model });
 
-@Controller('todo')
+@Controller("todo")
 export class TodoController extends BaseController {
   constructor(private readonly _todoService: TodoService) {
     super(_todoService);
