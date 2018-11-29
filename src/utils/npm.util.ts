@@ -1,9 +1,9 @@
-import { existsSync } from "fs";
-import { PACKAGES } from "../constants";
+import { existsSync } from 'fs';
+import { PACKAGES } from '../constants';
 
 export class NpmHelper {
   private static readonly nodeModulesPath: string =
-    process.cwd() + "/node_modules";
+    process.cwd() + '/node_modules';
 
   static get isMongooseInstalled(): boolean {
     return (
@@ -31,6 +31,6 @@ export class NpmHelper {
   }
 
   private static getPath(packageName: string): string {
-    return this.nodeModulesPath + "/" + packageName;
+    return this.nodeModulesPath + '/' + packageName;
   }
 }
