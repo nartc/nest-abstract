@@ -87,12 +87,7 @@ I am a big fan of `TypeScript` and **abstraction** overall. One of the biggest m
     import { Todo } from './todo.model';
     import { TodoService } from './todo.service';
 
-    const BaseController = abstractControllerFactory<Todo>({
-        model: TodoService.model,
-        auth: {
-            find: false,
-        },
-    });
+    const BaseController = abstractControllerFactory<Todo>({model: TodoService.model});
 
     @Controller('todo')
     export class TodoController extends BaseController {
@@ -106,9 +101,18 @@ I am a big fan of `TypeScript` and **abstraction** overall. One of the biggest m
    
    > Now your `TodoController` should have 5 pre-defined route handlers: `find`, `findById`, `create`, `update` and `delete`
 
+## With Authentication
+
+To enable `Authenticate` on your `Controllers` with `Passport`, `abstractControllerWithAuth`.
+   > You need to install `passport` and `@nestjs/passport` if you want to enable `Authentication`.
+  
+## With Swagger
+
+To be updated!
+
 ## Plans
 
-- Might break `abstractControllerFactory` out to 3 separate factories: normal, swagger and withAuth
+- [x] Might break `abstractControllerFactory` out to 3 separate factories: normal, swagger and withAuth
 - Supports `Serialization` (https://docs.nestjs.com/techniques/serialization)?
 - anything? 
 
