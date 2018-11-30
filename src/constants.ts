@@ -2,7 +2,7 @@ export const PACKAGES = {
     Mongoose: 'mongoose',
     TypeOrm: 'typeorm',
     Passport: 'passport',
-    Swagger: '@nestjs/swagger',
+    Swagger: 'swagger',
 };
 
 export const AUTH_GUARD_TYPE = 'jwt';

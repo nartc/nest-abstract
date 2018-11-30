@@ -1,9 +1,16 @@
 import { Controller } from "@nestjs/common";
-import { abstractControllerFactory } from "nest-abstract";
-import { Todo } from "./todo.model";
+import { abstractControllerWithSwagger } from "nest-abstract";
+import { Todo, TodoVm } from "./todo.model";
 import { TodoService } from "./todo.service";
 
-const BaseController = abstractControllerFactory<Todo>({ model: TodoService.model });
+const BaseController = abstractControllerWithSwagger<Todo>({
+  model: TodoService.model,
+  modelVm: TodoVm,
+  modelCreate: TodoVm,
+  auth: {
+    find: true
+  }
+});
 
 @Controller("todo")
 export class TodoController extends BaseController {
