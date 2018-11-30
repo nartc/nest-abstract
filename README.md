@@ -7,7 +7,7 @@ Fair warning: This package is still in early development stage. Please give me a
 ## Features
 - Provides **Abstractions** for your `NestJS` **RESTfulAPI**.
 - Includes: `AbstractModule`, `AbstractService`, and `AbstractControllerFactory` along with `AbstractModel` (`mongoose`) and `AbstractEntity` (`typeorm`).
-- [ ] Supports `@nestjs/swagger`
+- [x] Supports `@nestjs/swagger`
 
 ## Motivations
 
@@ -29,14 +29,14 @@ I am a big fan of `TypeScript` and **abstraction** overall. One of the biggest m
     export class AppModule {}
    ```
 
-   > By default, `AbstractModule` will use `Mongoose`. You can pass an object of type `AbstractModuleOptions` to the `forRoot()` method.
+   > By default, `AbstractModule` will use `Mongoose`. You can pass a value of `ObjectMapping` to the `forRoot()` method.
 
     ```typescript
     import { Module } from '@nestjs/common';
     import { AbstractModule, ObjectMapping } from 'nest-abstract';
 
     @Module({
-        imports: [AbstractModule.forRoot({objectMapping: ObjectMapping.TypeOrm})],
+        imports: [AbstractModule.forRoot(ObjectMapping.TypeOrm)],
     })
     export class AppModule {}
    ```
