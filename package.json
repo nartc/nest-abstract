@@ -26,20 +26,20 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@nestjs/common": "^5.4.0"
+    "@nestjs/common": "^7.0.8"
   },
   "devDependencies": {
-    "@nestjs/common": "^5.4.0",
-    "@nestjs/passport": "^5.1.0",
-    "@nestjs/swagger": "^2.5.1",
-    "@nestjs/typeorm": "^5.2.2",
-    "@types/mongoose": "^5.3.1",
-    "@types/node": "^10.12.10",
-    "mongoose": "^5.3.13",
-    "passport": "^0.4.0",
-    "prettier": "^1.15.2",
-    "typeorm": "^0.2.9",
-    "typescript": "^3.1.6"
+    "@nestjs/common": "^5.7.4",
+    "@nestjs/passport": "^7.0.0",
+    "@nestjs/swagger": "^4.5.2",
+    "@nestjs/typeorm": "^7.0.0",
+    "@types/mongoose": "^5.7.12",
+    "@types/node": "^13.13.0",
+    "mongoose": "^5.9.9",
+    "passport": "^0.4.1",
+    "prettier": "^2.0.4",
+    "typeorm": "^0.2.24",
+    "typescript": "^3.8.3"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -55,7 +55,7 @@
     "coverageDirectory": "./coverage"
   },
   "dependencies": {
-    "reflect-metadata": "^0.1.12",
-    "rxjs": "^6.3.3"
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.5"
   }
 }
