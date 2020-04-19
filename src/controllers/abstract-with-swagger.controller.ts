@@ -12,12 +12,12 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import {
-  ApiUseTags,
+  ApiTags,
   ApiBearerAuth,
-  ApiImplicitQuery,
+  ApiQuery,
   ApiOkResponse,
-  ApiImplicitParam,
-  ApiImplicitBody,
+  ApiParam,
+  ApiBody,
 } from '@nestjs/swagger';
 
 import { getAuthObj, NpmHelper } from '../utils';
@@ -49,7 +49,7 @@ export function abstractControllerWithSwagger<
     throw new Error(errorMessage);
   }
 
-  @ApiUseTags(model.name)
+  @ApiTags(model.name)
   abstract class AbstractController {
     protected readonly _service: AbstractCoreService<T>;
 
@@ -60,7 +60,7 @@ export function abstractControllerWithSwagger<
     @Get()
     @Authenticate(!!auth && auth.find, UseGuards(AuthGuard(AUTH_GUARD_TYPE)))
     @Authenticate(!!auth && auth.find, ApiBearerAuth())
-    @ApiImplicitQuery({
+    @ApiQuery({
       name: 'filter',
       description: 'Find Query',
       required: false,
@@ -83,7 +83,7 @@ export function abstractControllerWithSwagger<
       UseGuards(AuthGuard(AUTH_GUARD_TYPE)),
     )
     @Authenticate(!!auth && auth.findById, ApiBearerAuth())
-    @ApiImplicitParam({
+    @ApiParam({
       name: 'id',
       required: true,
       description: 'Id of Object',
@@ -102,8 +102,8 @@ export function abstractControllerWithSwagger<
     @Post()
     @Authenticate(!!auth && auth.create, UseGuards(AuthGuard(AUTH_GUARD_TYPE)))
     @Authenticate(!!auth && auth.create, ApiBearerAuth())
-    @ApiImplicitBody({
-      name: modelCreate.name,
+    @ApiBody({
+      //name: modelCreate.name,
       type: modelCreate,
       description: 'Data for model creation',
       required: true,
@@ -123,14 +123,14 @@ export function abstractControllerWithSwagger<
     @Put(':id')
     @Authenticate(!!auth && auth.update, UseGuards(AuthGuard(AUTH_GUARD_TYPE)))
     @Authenticate(!!auth && auth.update, ApiBearerAuth())
-    @ApiImplicitBody({
-      name: model.name,
+    @ApiBody({
+      //name: model.name,
       type: modelVm,
       description: 'Data for object update',
       required: true,
       isArray: false,
     })
-    @ApiImplicitParam({
+    @ApiParam({
       name: 'id',
       required: true,
       description: 'Id of Object',
@@ -154,7 +154,7 @@ export function abstractControllerWithSwagger<
     @Delete(':id')
     @Authenticate(!!auth && auth.delete, UseGuards(AuthGuard(AUTH_GUARD_TYPE)))
     @Authenticate(!!auth && auth.delete, ApiBearerAuth())
-    @ApiImplicitParam({
+    @ApiParam({
       name: 'id',
       required: true,
       description: 'Id of Object',
