@@ -24,7 +24,7 @@
     "@nestjs/mongoose": "^5.2.2",
     "@nestjs/passport": "^5.1.0",
     "@nestjs/swagger": "^2.5.1",
-    "mongoose": "^5.3.13",
+    "mongoose": "^5.7.5",
     "nest-abstract": "^1.0.0-beta.4",
     "passport": "^0.4.0",
     "reflect-metadata": "^0.1.12",
