@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "@nestjs/common": "^5.4.0",
-    "@nestjs/core": "^5.4.0",
+    "@nestjs/core": "^9.2.1",
     "@nestjs/mongoose": "^5.2.2",
     "@nestjs/passport": "^5.1.0",
-    "@nestjs/swagger": "^2.5.1",
+    "@nestjs/swagger": "^6.1.4",
     "mongoose": "^5.3.13",
     "nest-abstract": "^1.0.0-beta.4",
     "passport": "^0.4.0",
